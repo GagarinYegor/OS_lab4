@@ -9,9 +9,11 @@
 #include <sys/stat.h>
 
 #define fifo12 "fifo12"
-using namespace std;
+#define fifo13 "fifo13"
+#define fifo14 "fifo14"
+
 int main(void){
-  int pId12;
+  int pId12, pId13, pId14;
   char buff[100];
 
   FILE *fIn;
@@ -22,10 +24,16 @@ int main(void){
 
   pId12 = open(fifo12, O_WRONLY);
   write(pId12, buff, 99);
+  pId13 = open(fifo13, O_WRONLY);
+  write(pId13, buff, 99);
+  pId14 = open(fifo14, O_WRONLY);
+  write(pId14, buff, 99);
 
   printf("P1=%d, pPid=%d, in file str=%s\n", getpid(), getppid(), buff);
 
   close(pId12);
+  close(pId13);
+  close(pId14);
   fclose(fIn);
   exit(0);
 }
