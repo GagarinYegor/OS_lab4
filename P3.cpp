@@ -9,9 +9,10 @@
 #include <sys/stat.h>
 
 #define fifo13 "fifo13"
+#define fifo36 "fifo36"
 
 int main(void){
-  int pId13;
+  int pId13, pId36;
   char buff[100];
 
   pId13 = open(fifo13, O_RDONLY);
@@ -19,12 +20,13 @@ int main(void){
 
   strcat(buff, "+P3");
 
-  //pId5 = open(fifo12, O_WRONLY);
-  //write(pId5, buff, 99);
+  pId36 = open(fifo36, O_WRONLY);
+  write(pId36, buff, 99);
 
   printf("P3=%d, ppid=%d, in pipe str=%s\n", getpid(), getppid(), buff);
 
   close(pId13);
+  close(pId36);
   exit(0);
 }
 

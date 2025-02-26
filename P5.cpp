@@ -19,8 +19,8 @@ int main(void){
 
   strcat(buff, "+P5");
 
-  //pId5 = open(fifo12, O_WRONLY);
-  //write(pId5, buff, 99);
+  //pId58 = open(fifo58, O_WRONLY);
+  //write(pId58, buff, 99);
 
   printf("P5=%d, ppid=%d, in pipe str=%s\n", getpid(), getppid(), buff);
 
