@@ -14,6 +14,9 @@
 #define fifo25 "fifo25"
 #define fifo26 "fifo26"
 #define fifo36 "fifo36"
+#define fifo58 "fifo58"
+#define fifo68 "fifo68"
+#define fifo48 "fifo48"
 
 int main(void){
   int status;
@@ -41,6 +44,18 @@ int main(void){
     printf("don't create fifo\n");
     exit(-1);
   }
+  if(mkfifo(fifo58, 0606) < 0){
+    printf("don't create fifo\n");
+    exit(-1);
+  }
+  if(mkfifo(fifo68, 0606) < 0){
+    printf("don't create fifo\n");
+    exit(-1);
+  }
+  if(mkfifo(fifo48, 0606) < 0){
+    printf("don't create fifo\n");
+    exit(-1);
+  }
   if(fork() == 0)
     execl("./P1", "P1", NULL);
   if(fork() == 0)
@@ -53,6 +68,8 @@ int main(void){
     execl("./P5", "P5", NULL);
   if(fork() == 0)
     execl("./P6", "P6", NULL);
+  if(fork() == 0)
+    execl("./P8", "P8", NULL);
   while(wait(&status)>0);
   unlink(fifo12);
   unlink(fifo13);
@@ -60,6 +77,9 @@ int main(void){
   unlink(fifo25);
   unlink(fifo26);
   unlink(fifo36);
-  printf("\n creatorPid= %d\n", getpid());
+  unlink(fifo58);
+  unlink(fifo68);
+  unlink(fifo48);
+  printf("\ncreatorPid=%d\n", getpid());
   exit(0);
 }

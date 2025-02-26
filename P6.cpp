@@ -10,9 +10,10 @@
 
 #define fifo26 "fifo26"
 #define fifo36 "fifo36"
+#define fifo68 "fifo68"
 
 int main(void){
-  int pId26, pId36;
+  int pId26, pId36, pId68;
   char buff1[100], buff2[100], buff3[100] = "";
 
   pId26 = open(fifo26, O_RDONLY);
@@ -28,13 +29,14 @@ int main(void){
   strcat(buff3, ")");
   strcat(buff3, "+P6");
 
-  //pId68 = open(fifo68, O_WRONLY);
-  //write(pId68, buff, 99);
+  pId68 = open(fifo68, O_WRONLY);
+  write(pId68, buff3, 99);
 
   printf("P6=%d, ppid=%d, in pipe str=%s\n", getpid(), getppid(), buff3);
 
   close(pId26);
   close(pId36);
+  close(pId68);
   exit(0);
 }
 
