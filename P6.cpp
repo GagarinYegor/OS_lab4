@@ -22,11 +22,11 @@ int main(void){
   read(pId36, buff2, 99);
 
   strcat(buff3, "");
-  strcat(buff3, "(");
+  strcat(buff3, "((");
   strcat(buff3, buff1);
-  strcat(buff3, "+");
+  strcat(buff3, ")+(");
   strcat(buff3, buff2);
-  strcat(buff3, ")");
+  strcat(buff3, "))");
   strcat(buff3, "+P6");
 
   pId68 = open(fifo68, O_WRONLY);

@@ -17,7 +17,6 @@ int main(void){
   char buff[100];
 
   FILE *fIn;
-
   fIn = fopen("input.txt", "r");
   fgets(buff, 4, fIn);
   strcat(buff, "+P1");
