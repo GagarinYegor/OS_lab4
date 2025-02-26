@@ -8,24 +8,22 @@
 #include <cstdio>
 #include <sys/stat.h>
 
-#define fifo12 "fifo12"
 #define fifo25 "fifo25"
 
 int main(void){
-  int pId12, pId25;
+  int pId25;
   char buff[100];
 
-  pId12 = open(fifo12, O_RDONLY);
-  read(pId12, buff, 99);
+  pId25 = open(fifo25, O_RDONLY);
+  read(pId25, buff, 99);
 
-  strcat(buff, "+P2");
+  strcat(buff, "+P5");
 
-  pId25 = open(fifo25, O_WRONLY);
-  write(pId25, buff, 99);
+  //pId5 = open(fifo12, O_WRONLY);
+  //write(pId5, buff, 99);
 
-  printf("P2=%d, ppid=%d, in pipe str=%s\n", getpid(), getppid(), buff);
+  printf("P5=%d, ppid=%d, in pipe str=%s\n", getpid(), getppid(), buff);
 
-  close(pId12);
   close(pId25);
   exit(0);
 }
