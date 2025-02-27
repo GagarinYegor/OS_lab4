@@ -22,7 +22,7 @@ int main(void){
     fgets(buff, 4, fIn);
   }
   else{
-    printf("input.txt was'nt opened");
+    printf("input.txt was'nt opened\n");
   }
 
   strcat(buff, "+P1");
