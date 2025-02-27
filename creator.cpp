@@ -21,39 +21,39 @@
 int main(void){
   int status;
   if(mkfifo(fifo12, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo12\n");
     exit(-1);
   }
   if(mkfifo(fifo13, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo13\n");
     exit(-1);
   }
   if(mkfifo(fifo14, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo14\n");
     exit(-1);
   }
   if(mkfifo(fifo25, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo25\n");
     exit(-1);
   }
   if(mkfifo(fifo26, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo26\n");
     exit(-1);
   }
   if(mkfifo(fifo36, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo36\n");
     exit(-1);
   }
   if(mkfifo(fifo58, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo58\n");
     exit(-1);
   }
   if(mkfifo(fifo68, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo68\n");
     exit(-1);
   }
   if(mkfifo(fifo48, 0606) < 0){
-    printf("don't create fifo\n");
+    printf("don't create fifo48\n");
     exit(-1);
   }
   if(fork() == 0)
