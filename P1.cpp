@@ -14,11 +14,17 @@
 
 int main(void){
   int pId12, pId13, pId14;
-  char buff[100];
+  char buff[100] = "";
 
   FILE *fIn;
   fIn = fopen("input.txt", "r");
-  fgets(buff, 4, fIn);
+  if(fIn){
+    fgets(buff, 4, fIn);
+  }
+  else{
+    printf("input.txt was'nt opened");
+  }
+
   strcat(buff, "+P1");
 
   pId12 = open(fifo12, O_WRONLY);
